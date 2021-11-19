@@ -35,26 +35,8 @@
         </section>
     </main>
     <footer>
-        <div class="social">
+        <div id="social-sec">
             <h3 class="f-title">Social Media</h3>
-            <ul>
-                <li>
-                    <i class="fa fa-facebook-square"></i>
-                    <a href="#">Facebook</a>
-                </li>
-                <li>
-                    <i class="fa fa-instagram"></i>
-                    <a href="#">Instagram</a>
-                </li>
-                <li>
-                    <i class="fa fa-twitter-square"></i>
-                    <a href="#">Twitter</a>
-                </li>
-                <li>
-                    <i class="fa fa-google-plus-square"></i>
-                    <a href="#">Google</a>
-                </li>
-            </ul>
         </div>
         <div class="contact">
             <h3 class="f-title">Contact Us</h3>
