@@ -1,11 +1,3 @@
-const productsSec = document.getElementById("products-sec");
-
-for (const product of PRODUCTS_DATA) {
-
-    productsSec.appendChild(product.toNode());
-}
-
-
 // function validate() {
 //     event.preventDefault();
 //     var name = document.getElementById('name').value;
