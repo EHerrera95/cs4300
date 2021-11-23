@@ -1,11 +1,5 @@
-Options +FollowSymLinks -MultiViews -Indexes
-
 RewriteEngine On
-RewriteBase /
-
-RewriteCond %{DOCUMENT_ROOT}/assets/$1 -f
-RewriteRule ^(.*)$ assets/$1 [L]
-
-RewriteCond %{THE_REQUEST} \s/assets/ [NC,OR]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^ index.php [L,QSA]
+RewriteCond %{LA-U:REQUEST_FILENAME} !-s
+RewriteCond %{LA-U:REQUEST_FILENAME} !-l
+RewriteCond %{LA-U:REQUEST_FILENAME} !-d
+RewriteRule ^ /index.php [L]
