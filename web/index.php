@@ -10,7 +10,6 @@
 </head>
 
 <body>
-    <?php require "config/connection.php" ?>
     <header>
         <nav>
             <a href="index.php" class="logo">
@@ -27,13 +26,26 @@
         </nav>
     </header>
     <main>
-        <!-- <section class="hero">
-            <h1>You Deserve to be Beauty</h1>
-        </section> -->
-        <section id="products-sec">
-            <h1 class="title">Products</h1>
-        </section>
-    </main>
+
+    <?php 
+    require "config/connection.php";
+    $request = $_SERVER['REQUEST_URI'];
+
+    switch($request){
+        case '/':
+            require __DIR__ . '/views/index.php';
+            break;
+        case '/contact':
+            require __DIR__ . '/views/contact.php';
+            break;
+        case '/testimonials':
+            require __DIR__ . '/views/testimonials.php';
+            break;
+        default:
+            http_response_code(404);
+            break;
+    }?>
+
     <footer>
         <div id="social-sec">
             <h3 class="f-title">Social Media</h3>
