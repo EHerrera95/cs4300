@@ -16,7 +16,7 @@
                 <img src="assets/img/logo1.png" height="80">
             </a>
             <ul>
-                <li <?php if($_SERVER['REQUEST_URI'] == "/index.php") echo "class=\"active\""; ?>>
+                <li <?php if(in_array($_SERVER['REQUEST_URI'], array("/index.php", "/", ""))) echo "class=\"active\""; ?>>
                     <a href="index.php" class="nav-link">Home</a>
                 </li>
                 <li <?php if($_SERVER['REQUEST_URI'] == "/contact.php") echo "class=\"active\""; ?>>
