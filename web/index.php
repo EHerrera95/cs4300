@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>F & M's</title>
+    <link rel="manifest" href="/manifest.json">
     <?php include "assets/css/index.php" ?>
 </head>
 
