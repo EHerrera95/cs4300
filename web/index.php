@@ -35,7 +35,13 @@
     $request = $_SERVER['REQUEST_URI'];
 
     switch($request){
+        case '':
+            require __DIR__ . '/views/index.php';
+            break;
         case '/':
+            require __DIR__ . '/views/index.php';
+            break;
+        case '/index.php':
             require __DIR__ . '/views/index.php';
             break;
         case '/contact.php':
