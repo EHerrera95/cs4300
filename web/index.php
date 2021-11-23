@@ -35,8 +35,6 @@
     <?php 
     require "config/connection.php";
     $request = $_SERVER['REQUEST_URI'];
-
-    if(stripos(".php", $request) > 0){
        switch($request){
         case '/contact.php':
             require __DIR__ . '/views/contact.php';
@@ -47,7 +45,7 @@
         default:
             require __DIR__ . '/views/index.php';
             break;
-    }}
+    }
     ?>
 
     <footer>
