@@ -21,6 +21,7 @@ var urlsToCache = [
   "/assets/img/home-ss.png",
   "/assets/img/logo.png",
   "/assets/img/logo1.png",
+  "/manifest.json"
 ];
 
 self.addEventListener("install", function (event) {

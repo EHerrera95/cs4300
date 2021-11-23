@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <script src="assets/js/sw_register.js"></script>
     <header>
         <nav>
             <a href="index.php" class="logo">
