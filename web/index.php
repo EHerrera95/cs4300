@@ -35,10 +35,10 @@
         case '/':
             require __DIR__ . '/views/index.php';
             break;
-        case '/contact':
+        case '/contact.php':
             require __DIR__ . '/views/contact.php';
             break;
-        case '/testimonials':
+        case '/testimonials.php':
             require __DIR__ . '/views/testimonials.php';
             break;
         default:
