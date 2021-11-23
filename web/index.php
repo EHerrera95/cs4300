@@ -16,11 +16,14 @@
                 <img src="assets/img/logo1.png" height="80">
             </a>
             <ul>
-                <li class="active">
+                <li <?php if($_SERVER['REQUEST_URI'] == "/index.php") echo "class=\"active\""; ?>>
                     <a href="index.php" class="nav-link">Home</a>
                 </li>
-                <li>
+                <li <?php if($_SERVER['REQUEST_URI'] == "/contact.php") echo "class=\"active\""; ?>>
                     <a href="contact.php" class="nav-link">Contact Us</a>
+                </li>
+                <li <?php if($_SERVER['REQUEST_URI'] == "/testimonials.php") echo "class=\"active\""; ?>>
+                    <a href="testimonials.php" class="nav-link">Testimonials</a>
                 </li>
             </ul>
         </nav>
