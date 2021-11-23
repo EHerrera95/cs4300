@@ -1,12 +1,11 @@
+Options +FollowSymLinks -MultiViews -Indexes
+
 RewriteEngine On
 RewriteBase /
-
-RewriteCond %{REQUEST_FILENAME} -f [OR]
-RewriteCond %{REQUEST_FILENAME} -d [OR]
-RewriteCond %{REQUEST_URI} ^/assets/ [NC]
-RewriteRule ^ - [L]
 
 RewriteCond %{DOCUMENT_ROOT}/assets/$1 -f
 RewriteRule ^(.*)$ assets/$1 [L]
 
+RewriteCond %{THE_REQUEST} \s/assets/ [NC,OR]
+RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.php [L,QSA]
