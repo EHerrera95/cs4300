@@ -6,4 +6,6 @@ function time() {
     document.getElementById('time').innerHTML = new_time;
 }
 
-time();
+setInterval(() => {
+    time();
+}, 1000);
