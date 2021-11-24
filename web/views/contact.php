@@ -1,20 +1,26 @@
 <?php
 $email = $emailErr = "";
 $message = $messageErr = "";
+$emailValid = $messageValid = false;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["email"])) {
         $emailErr = "Email is required";
+    } else if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
+        $emailErr = "Invalid email format";
     } else {
         $email = test_input($_POST["email"]);
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $emailErr = "Invalid email format";
-        }
+        $emailValid = true;
     }
+
     if (strlen(trim($_POST["message"])) == 0) {
         $messageErr = "Message is required";
     } else {
         $message = test_input($_POST["message"]);
-        $qry = "INSERT INTO FAQ (Question) VALUES ('$$message');";
+        $messageValid = true;
+    }
+
+    if ($emailValid && $messageValid) {
+        $qry = "INSERT INTO FAQ (Question) VALUES ('$message');";
         $conn->query($qry);
     }
 }
@@ -72,12 +78,12 @@ function test_input($data)
                 </h3>
                 <form method="post" action="/contact">
                     <div class="form-row">
-                        <span class="error"><?php echo $emailErr; ?></span>
+                        <?php if (!$emailValid) echo "<div class=\"error\"><?php echo $emailErr; ?></div>"; ?>
                         <label for="email">Email:</label>
                         <input type="text" name="email" class="input" placeholder="someone@xyz.com" value="<?php echo $email; ?>">
                     </div>
                     <div class="form-row">
-                        <span class="error"><?php echo $messageErr; ?></span>
+                        <?php if (!$messageValid) echo "<div class=\"error\"><?php echo $messageValid; ?></div>"; ?>
                         <label for="message">Message:</label>
                         <textarea name="message" class="input" rows="10"><?php echo $message; ?></textarea>
                     </div>
@@ -91,8 +97,4 @@ function test_input($data)
         </div>
     </section>
 </main>
-<?php
-echo $email;
-echo $message;
-?>
 <!-- <script src="assets/js/contact.js"></script> -->

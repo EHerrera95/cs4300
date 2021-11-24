@@ -289,14 +289,7 @@ textarea {
     font-size: 28px;
 }
 
-#error {
-    display: none;
+.error {
     font-weight: 700;
     color: red;
-}
-
-#success {
-    display: none;
-    font-weight: 700;
-    color: green;
 }
