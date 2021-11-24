@@ -12,6 +12,7 @@
 
 <body>
     <!-- <script src="assets/js/sw_register.js"></script> -->
+    <?php include "components/header.php" ?>
     <?php
     require "config/connection.php";
 
