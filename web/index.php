@@ -11,9 +11,9 @@
 </head>
 
 <body>
-    <!-- <script src="assets/js/sw_register.js"></script> -->
-    <?php include "components/header.php" ?>
+    <script src="assets/js/sw_register.js"></script>
     <?php
+    include "components/header.php";
     require "config/connection.php";
 
     $request = $_SERVER['REQUEST_URI'];
@@ -28,8 +28,8 @@
             require __DIR__ . '/views/index.php';
             break;
     }
+    include "components/footer.php";
     ?>
-    <?php include "components/footer.php" ?>
 </body>
 
 </html>
