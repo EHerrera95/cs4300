@@ -3,7 +3,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 $app->get("/", function(){
-    return __DIR__ . '/views/index.php';
+    return dirname(__DIR__) . '/views/index.php';
 });
 
 $app->get("/contact", function(){
@@ -13,3 +13,5 @@ $app->get("/contact", function(){
 $app->get("/testimonials", function(){
     return __DIR__ . '/views/testimonials.php';
 });
+
+?>
