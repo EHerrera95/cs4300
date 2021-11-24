@@ -78,12 +78,12 @@ function test_input($data)
                 </h3>
                 <form method="post" action="/contact">
                     <div class="form-row">
-                        <?php if (!$emailValid) echo "<div class=\"error\"><?php echo $emailErr; ?></div>"; ?>
+                        <?php if (!$emailValid) echo "<div class=\"error\">" . $emailErr . "</div>"; ?>
                         <label for="email">Email:</label>
                         <input type="text" name="email" class="input" placeholder="someone@xyz.com" value="<?php echo $email; ?>">
                     </div>
                     <div class="form-row">
-                        <?php if (!$messageValid) echo "<div class=\"error\"><?php echo $messageValid; ?></div>"; ?>
+                        <?php if (!$messageValid) echo "<div class=\"error\">" . $messageValid . "</div>"; ?>
                         <label for="message">Message:</label>
                         <textarea name="message" class="input" rows="10"><?php echo $message; ?></textarea>
                     </div>
