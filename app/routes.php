@@ -3,7 +3,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 $app->get("/", function(){
-    return dirname(__DIR__) . '/views/index.php';
+    require dirname(__DIR__) . '/views/index.php';
 });
 
 $app->get("/contact", function(){
