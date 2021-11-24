@@ -72,3 +72,4 @@
         </div>
     </section>
 </main>
+<script src="assets/js/contact.js"></script>
