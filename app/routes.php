@@ -7,11 +7,11 @@ $app->get("/", function(){
 });
 
 $app->get("/contact", function(){
-    return __DIR__ . '/views/contact.php';
+    require __DIR__ . '/views/contact.php';
 });
 
 $app->get("/testimonials", function(){
-    return __DIR__ . '/views/testimonials.php';
+    require __DIR__ . '/views/testimonials.php';
 });
 
 ?>
