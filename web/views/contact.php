@@ -10,8 +10,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $emailErr = "Invalid email format";
         }
     }
-    if (trim($_POST["message"]) == "" ) {
-        $messageErr == "Message is required";
+    if (true) {
+        $messageErr == strlen(trim($_POST["message"]));
     } else {
         $message = test_input($_POST["message"]);
     }
@@ -102,6 +102,6 @@ function test_input($data)
 </main>
 <?php
 echo $email;
-echo htmlspecialchars($message);
+echo $message;
 ?>
 <!-- <script src="assets/js/contact.js"></script> -->
