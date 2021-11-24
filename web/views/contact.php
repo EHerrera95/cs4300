@@ -88,9 +88,7 @@ function test_input($data)
                     <div class="form-row">
                         <span class="error"><?php echo $messageErr; ?></span>
                         <label for="message">Message:</label>
-                        <textarea name="message" class="input" rows="10">
-                        <?php echo $message; ?>
-                        </textarea>
+                        <textarea name="message" class="input" rows="10"><?php echo $message; ?></textarea>
                     </div>
                     <div class="form-row center">
                         <button class="btn" type="submit">
