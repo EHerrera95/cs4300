@@ -13,8 +13,8 @@
 <body>
     <script src="assets/js/sw_register.js"></script>
     <?php
-    include "components/header.php";
     require "config/connection.php";
+    include "components/header.php";
 
     $request = $_SERVER['REQUEST_URI'];
     switch ($request) {
@@ -29,6 +29,7 @@
             break;
     }
     include "components/footer.php";
+    $conn->close()
     ?>
 </body>
 

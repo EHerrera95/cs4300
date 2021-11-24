@@ -1,9 +1,11 @@
 <?php
 $email = $emailErr = "";
 $message = $messageErr = "";
+$valid = true;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["email"])) {
         $emailErr = "Email is required";
+        $valid = false;
     } else {
         $email = test_input($_POST["email"]);
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -12,9 +14,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     if (strlen(trim($_POST["message"])) == 0) {
         $messageErr = "Message is required";
+        $valid = false;
     } else {
         $message = test_input($_POST["message"]);
     }
+}
+if ($valid) {
+    $qry = "insert into FAQ (Question) values ('$$message');";
+    $conn->query($qry);
 }
 function test_input($data)
 {
