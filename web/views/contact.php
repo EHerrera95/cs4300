@@ -68,7 +68,7 @@ function test_input($data)
                 <h3 class="center c-title">
                     We would love to hear from you!
                 </h3>
-                <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])."/contact"; ?>">
                     <div class="form-row">
                         <div id="error">
                             <?php
