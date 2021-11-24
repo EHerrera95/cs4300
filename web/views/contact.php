@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
     if (true) {
-        $messageErr == strlen(trim($_POST["message"]));
+        $messageErr = strlen(trim($_POST["message"]));
     } else {
         $message = test_input($_POST["message"]);
     }
@@ -69,17 +69,6 @@ function test_input($data)
                     We would love to hear from you!
                 </h3>
                 <form method="post" action="/contact">
-                    <div class="form-row">
-                        <div id="error">
-                            <?php
-                            echo $nameErr;
-                            if (strlen($nameErr)) {
-                                echo "<br />";
-                            }
-                            echo $messageErr;
-                            ?>
-                        </div>
-                    </div>
                     <div class="form-row">
                         <span class="error"><?php echo $emailErr; ?></span>
                         <label for="email">Email:</label>
