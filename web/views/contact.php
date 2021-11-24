@@ -100,4 +100,8 @@ function test_input($data)
         </div>
     </section>
 </main>
+<?php
+echo $email;
+echo $message;
+?>
 <!-- <script src="assets/js/contact.js"></script> -->
