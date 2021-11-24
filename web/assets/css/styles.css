@@ -170,11 +170,6 @@ footer li:hover {
     display: inline-block;
 }
 
-.frequently ul li::before {
-    content: "-";
-    margin-right: 5px;
-}
-
 .frequently ul li {
     content: "-";
     padding-left: -5px;
