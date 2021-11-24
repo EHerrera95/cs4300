@@ -18,35 +18,28 @@
                 <img src="assets/img/logo1.png" height="80">
             </a>
             <ul>
-                <li <?php if(in_array($_SERVER['REQUEST_URI'], array("/index.php", "/", ""))) echo "class=\"active\""; ?>>
-                    <a href="index.php" class="nav-link">Home</a>
+                <li <?php if (in_array($_SERVER['REQUEST_URI'], array("/", ""))) echo "class=\"active\""; ?>>
+                    <a href="/" class="nav-link">Home</a>
                 </li>
-                <li <?php if($_SERVER['REQUEST_URI'] == "/contact.php") echo "class=\"active\""; ?>>
-                    <a href="contact.php" class="nav-link">Contact Us</a>
+                <li <?php if ($_SERVER['REQUEST_URI'] == "/contact.php") echo "class=\"active\""; ?>>
+                    <a href="/contact" class="nav-link">Contact Us</a>
                 </li>
-                <li <?php if($_SERVER['REQUEST_URI'] == "/testimonials.php") echo "class=\"active\""; ?>>
-                    <a href="testimonials.php" class="nav-link">Testimonials</a>
+                <li <?php if ($_SERVER['REQUEST_URI'] == "/testimonials.php") echo "class=\"active\""; ?>>
+                    <a href="/testimonials" class="nav-link">Testimonials</a>
                 </li>
             </ul>
         </nav>
     </header>
-    <main>
 
-    <?php 
-    require "config/connection.php";
-    $request = $_SERVER['REQUEST_URI'];
-       switch($request){
-        case '/contact.php':
-            require __DIR__ . '/views/contact.php';
-            break;
-        case '/testimonials.php':
-            require __DIR__ . '/views/testimonials.php';
-            break;
-        default:
-            require __DIR__ . '/views/index.php';
-            break;
-    }
+    <?php
+    require_once __DIR__ . '/../vendor/autoload.php';
+
+    $app = new Silex\Application();
+    require_once __DIR__ . '/../app/routes.php';
+
+    $app->run();
     ?>
+
 
     <footer>
         <div id="social-sec">
