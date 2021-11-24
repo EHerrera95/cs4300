@@ -81,10 +81,12 @@ function test_input($data)
                         </div>
                     </div>
                     <div class="form-row">
+                        <span class="error"><?php echo $emailErr; ?></span>
                         <label for="email">Email:</label>
                         <input type="text" name="email" class="input" placeholder="someone@xyz.com" value="<?php echo $email; ?>">
                     </div>
                     <div class="form-row">
+                        <span class="error"><?php echo $messageErr; ?></span>
                         <label for="message">Message:</label>
                         <textarea name="message" class="input" rows="10">
                         <?php echo $message; ?>
