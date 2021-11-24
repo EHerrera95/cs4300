@@ -68,7 +68,7 @@ function test_input($data)
                 <h3 class="center c-title">
                     We would love to hear from you!
                 </h3>
-                <form method="post" action="/contact"; ?>">
+                <form method="post" action="/contact">
                     <div class="form-row">
                         <div id="error">
                             <?php
