@@ -1,7 +1,6 @@
 <?php
 $email = $emailErr = "";
 $message = $messageErr = "";
-$submit = false;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["email"])) {
         $emailErr = "Email is required";
@@ -15,12 +14,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $messageErr = "Message is required";
     } else {
         $message = test_input($_POST["message"]);
-        $submit = false;
+        $qry = "INSERT INTO FAQ (Question) VALUES ('$$message');";
+        $conn->query($qry);
     }
-}
-if ($submit) {
-    $qry = "insert into FAQ (Question) values ('$$message');";
-    $conn->query($qry);
 }
 function test_input($data)
 {
