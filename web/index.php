@@ -28,6 +28,7 @@
             require __DIR__ . '/views/index.php';
             break;
     }
+
     include "components/footer.php";
     $conn->close()
     ?>
