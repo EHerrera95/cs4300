@@ -6,6 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["email"])) {
         $emailErr = "Email is required";
     } else if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
+        $email = test_input($_POST["email"]);
         $emailErr = "Invalid email format";
     } else {
         $email = test_input($_POST["email"]);
@@ -20,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if ($emailValid && $messageValid) {
-        $qry = "INSERT INTO FAQ (Question) VALUES ('$message');";
+        $qry = "INSERT INTO FAQ (Author,Question) VALUES ('$email','$message');";
         $conn->query($qry);
     }
 }

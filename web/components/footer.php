@@ -30,7 +30,7 @@
             $sql = $conn->query("SELECT * FROM FAQ");
             if ($sql != false) {
                 foreach ($sql as $record) {
-                    echo  "<li>" . $record["Question"] . "</li>";
+                    echo  "<li> <div>" . $record["Question"] . "</div><cite>" . $record["Author"] . "</cite></li>";
                 }
             }
             ?>
