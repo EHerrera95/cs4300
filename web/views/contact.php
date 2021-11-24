@@ -83,7 +83,7 @@ function test_input($data)
                         <input type="text" name="email" class="input" placeholder="someone@xyz.com" value="<?php echo $email; ?>">
                     </div>
                     <div class="form-row">
-                        <?php if (!$messageValid) echo "<div class=\"error\">" . $messageValid . "</div>"; ?>
+                        <?php if (!$messageValid) echo "<div class=\"error\">" . $messageErr . "</div>"; ?>
                         <label for="message">Message:</label>
                         <textarea name="message" class="input" rows="10"><?php echo $message; ?></textarea>
                     </div>
