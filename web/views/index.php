@@ -1,7 +1,7 @@
 <main>
-    <!-- <section class="hero">
+    <section class="hero">
         <h1>You Deserve to be Beauty</h1>
-    </section> -->
+    </section>
 
     <section id="products-sec">
         <h1 class="title">Products</h1>
