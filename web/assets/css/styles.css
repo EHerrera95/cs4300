@@ -153,9 +153,6 @@ footer .fa {
 }
 
 footer li {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
     align-items: center;
     transition: 0.2s ease;
     padding: 5px 0;
