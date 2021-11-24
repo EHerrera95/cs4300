@@ -25,21 +25,16 @@
     <div class="frequently">
         <h3 class="f-title">Frequently asked questions</h3>
         <ul>
-            <li>
-                Fusce eget dolor adipiscing
-            </li>
-            <li>
-                Posuere nisl eu venenatis gravida
-            </li>
-            <li>
-                Morbi dictum ligula mattis
-            </li>
-            <li>
-                Etiam diam vel dolor luctus dapibus
-            </li>
-            <li>
-                Vestibulum ultrices magna
-            </li>
+
+            <?php
+            $sql = $conn->query("SELECT * FROM FAQ");
+            if ($sql != false) {
+                foreach ($sql as $record) {
+                    echo  "<li>" . $record["Question"] . "</li>";
+                }
+            }
+            ?>
+
         </ul>
     </div>
     <div class="sub-footer">
