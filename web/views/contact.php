@@ -10,8 +10,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $emailErr = "Invalid email format";
         }
     }
-    if (true) {
-        $messageErr = strlen(trim($_POST["message"]));
+    if (strlen(trim($_POST["message"])) == 0) {
+        $messageErr = "Message is required";
     } else {
         $message = test_input($_POST["message"]);
     }
