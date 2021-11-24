@@ -21,8 +21,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if ($emailValid && $messageValid) {
-        $qry = "INSERT INTO FAQ (Author,Question) VALUES ('$email','$message');";
-        $conn->query($qry);
+        $sql = "INSERT INTO FAQ (Author,Question) VALUES ('$email','$message');";
+        if ($conn->query($sql) === TRUE) {
+            echo "New record created successfully";
+          } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+          }
     }
 }
 function test_input($data)
