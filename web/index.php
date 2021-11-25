@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <script src="assets/js/sw_register.js"></script>
+    <!-- <script src="assets/js/sw_register.js"></script> -->
     <?php
     require "config/connection.php";
     include "components/header.php";
