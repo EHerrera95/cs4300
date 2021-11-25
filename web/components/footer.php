@@ -27,7 +27,7 @@
         <ul>
 
             <?php
-            $sql = $conn->query("SELECT * FROM FAQ");
+            $sql = $conn->query("SELECT * FROM FAQ ORDER BY Submitted DESC LIMIT 4");
             if ($sql != false) {
                 foreach ($sql as $record) {
                     echo  "<li>" . $record["Question"] . "<br/><cite>" . $record["Author"] . "</cite></li>";
