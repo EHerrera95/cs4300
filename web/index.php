@@ -28,6 +28,11 @@
             break;
     }
 
+    $arr = array(0, 1, 2, 3, 4);
+    foreach ($arr as $__btn_txt) {
+        include "components/button.php";
+    }
+
     include "components/footer/index.php";
     $conn->close()
     ?>
