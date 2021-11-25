@@ -18,7 +18,7 @@
 
     switch ($_SERVER['REQUEST_URI']) {
         case '/contact':
-            require __DIR__ . '/views/contact.php';
+            require __DIR__ . '/views/contact/index.php';
             break;
         case '/testimonials':
             require __DIR__ . '/views/testimonials.php';
