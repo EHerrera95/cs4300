@@ -1,1 +1,0 @@
-<button><?php echo $GLOBALS["__btn_txt"]; ?></button>
