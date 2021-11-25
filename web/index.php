@@ -28,7 +28,7 @@
             break;
     }
 
-    include "components/footer";
+    include "components/footer/index.php";
     $conn->close()
     ?>
 </body>
