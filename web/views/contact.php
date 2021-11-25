@@ -86,7 +86,7 @@ function test_input($data)
                 <h3 class="center c-title">
                     We would love to hear from you!
                 </h3>
-                <?php if (!$successSubmitFlag) echo "<h3 class=\"success\">Thank you for your submission!</h3>"; ?>
+                <?php if ($successSubmitFlag) echo "<h3 class=\"success\">Thank you for your submission!</h3>"; ?>
                 <form method="post" action="/contact">
                     <div class="form-row">
                         <?php if (!$emailValid) echo "<div class=\"error\">" . $emailErr . "</div>"; ?>
