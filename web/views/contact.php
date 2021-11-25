@@ -2,6 +2,7 @@
 $email = $emailErr = "";
 $message = $messageErr = "";
 $emailValid = $messageValid = false;
+$successSubmitFlag = false;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["email"])) {
         $emailErr = "Email is required";
@@ -26,7 +27,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bind_param("ss", $email, $message);
 
         if ($stmt->execute() === TRUE) {
-            echo "New record created successfully";
+            $email = $message = "";
+            $successSubmitFlag = true;
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
@@ -84,6 +86,7 @@ function test_input($data)
                 <h3 class="center c-title">
                     We would love to hear from you!
                 </h3>
+                <?php if (!$successSubmitFlag) echo "<h3 class=\"success\">Thank you for your submission!</h3>"; ?>
                 <form method="post" action="/contact">
                     <div class="form-row">
                         <?php if (!$emailValid) echo "<div class=\"error\">" . $emailErr . "</div>"; ?>
